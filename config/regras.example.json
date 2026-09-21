@@ -1,0 +1,32 @@
+{
+  "versao": 1,
+  "_como_usar": [
+    "Copie este arquivo para config/regras.json (o /setup faz isso) e troque os códigos pelos do SEU Sienge.",
+    "Descubra os códigos com as ferramentas listar_centros_custo e listar_planos_financeiros.",
+    "Cada regra casa por palavras (no nome do fornecedor, nos itens ou na descrição) OU por documento (CNPJ/CPF sem máscara).",
+    "A primeira regra que casar vence; regra por documento vence regra por palavra.",
+    "O que o usuário confirma na hora do lançamento vira aprendizado em config/aprendizado.json e passa na frente das regras."
+  ],
+  "regras": [
+    {
+      "nome": "Combustível",
+      "quando": { "palavras": ["posto", "combustivel", "gasolina", "etanol", "diesel", "ipiranga", "shell", "petrobras"] },
+      "apropriar": { "centro_custo_id": 0, "plano_financeiro_id": "0" }
+    },
+    {
+      "nome": "Alimentação",
+      "quando": { "palavras": ["restaurante", "lanchonete", "padaria", "refeicao", "marmita", "ifood", "pizzaria", "churrascaria", "cafe"] },
+      "apropriar": { "centro_custo_id": 0, "plano_financeiro_id": "0" }
+    },
+    {
+      "nome": "Material de construção",
+      "quando": { "palavras": ["materiais de construcao", "material de construcao", "cimento", "argamassa", "areia", "brita", "tijolo", "ferragem", "eletrica", "hidraulica"] },
+      "apropriar": { "centro_custo_id": 0, "plano_financeiro_id": "0" }
+    },
+    {
+      "nome": "Fornecedor fixo (exemplo por documento)",
+      "quando": { "documentos": ["00000000000000"] },
+      "apropriar": { "centro_custo_id": 0, "plano_financeiro_id": "0", "departamento_id": null }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "sienge-agent",
+  "version": "1.0.0",
+  "description": "Agente para o Sienge (ERP da construção): servidor MCP + skills do Claude Code que lançam notas fiscais, cupons e recibos no contas a pagar a partir da foto.",
+  "type": "module",
+  "main": "mcp/index.js",
+  "bin": {
+    "sienge-agent-mcp": "mcp/index.js"
+  },
+  "license": "MIT",
+  "author": "Eric Luciano Ferreira (Expert Integrado)",
+  "homepage": "https://github.com/ericluciano/sienge-agent#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericluciano/sienge-agent.git"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "start": "node mcp/index.js",
+    "test": "node --test",
+    "testar-conexao": "node scripts/testar-conexao.mjs",
+    "smoke": "node scripts/smoke-mcp.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  }
+}

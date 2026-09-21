@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "sienge": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["mcp/index.js"]
+    }
+  }
+}

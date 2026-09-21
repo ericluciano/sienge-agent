@@ -1,0 +1,21 @@
+# Credenciais e configuração local — NUNCA versionar
+.env
+.env.*
+!.env.example
+
+# Regras e aprendizado do usuário (dados da empresa dele, não do repositório)
+config/regras.json
+config/aprendizado.json
+config/cache.json
+
+# Fotos de notas (entrada e lançadas) — dado financeiro da empresa
+notas/
+
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Configs locais do Claude Code, EXCETO as project skills versionadas
+.claude/*
+!.claude/skills/
